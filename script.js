@@ -9,62 +9,65 @@ const perguntas = [
         enunciado: "Como é sua noite de sono?,
             alternativas: [
             {   
-            alternativa:"Boa",
-            "Ruim"
+            texto:"Boa",
+            afirmação: "afirmação",
+            },
             {
-            }
-                texto."Boa",
+                texto:"Ruim",
                 afirmação:"afirmação",
             },
-            ]
+        ]
+
     {
         enunciado: "Sua alimentação é saudavel?",
         alternativas: [
             {   
-            alternativa:"Sim",
-            "Não"
-            {
-            }
-                texto."Não",
-                afirmação:"afirmação",
-            },
+                texto:"Sim",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Não",
+                    afirmação:"afirmação",
+                },
             ]
     },
+
     {
         enunciado: "Qual é a duração do seu sono?",
         alternativas: [
             {   
-            alternativa:"Mais de 8 horas",
-            "Menos de 8 horas"
-            {
-            }
-                texto."Menos de 8 horas",
-                afirmação:"afirmação",
-            },
+                texto:"Mais de 8 horas",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Menos de 8 horas",
+                    afirmação:"afirmação",
+                },
             ]
     },
+
     {
         enunciado: "Qual sua cor preferida?",
         alternativas: [
             {   
-            alternativa:"Azul",
-            "Rosa"
-            {
-            }
-                texto."Azul",
-                afirmação:"afirmação",
-            },
+                texto:"Azul",
+                afirmação: "afirmação",
+                },
+                {
+                    texto:"Rosa",
+                    afirmação:"afirmação",
+                },
             ]
     },
     {
         enunciado: "Quantos litros de agua você?",
         alternativas: [
             {   
-                alternativa:"Mais de 3 litros",
-                "Menos de 3 litros "
+                texto:"Mais de 3 litros ",
+                afirmação: "afirmação",
+                },
                 {
-                }
-                    texto."Mais de 3 litros",
+                    texto:"Menos de 3 litros ",
                     afirmação:"afirmação",
                 },
         ]
@@ -84,9 +87,14 @@ function mostraPergunta() {
 function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click",()> respostaSelecionada(alternativa));   
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
-
+function respostaSelecionada(opcaoSelecinada){
+    cost afirmacoes = opcaoSelecionada.afirmacoes;
+    atual++;
+    mostraPergunta();
+}
 mostraPergunta
