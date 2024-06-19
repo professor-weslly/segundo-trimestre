@@ -103,4 +103,9 @@ historiaFinal += afirmacoes + "";
     atual++;
     mostraPergunta();
 }
+
+function mostraResultado(){
+    caixaPerguntas.textContent ="";
+
+    
 mostraPergunta
