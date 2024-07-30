@@ -1,78 +1,95 @@
-cost caixaPrincipal=document.querySelector(".caixa-principal")
-cost caixaPerguntas=document.querySelector(".caixa-perguntas")
-cost caixaAlternativas=document.querySelector(".caixa-alternativas")
-cost caixaResultado=document.querySelector(".caixa-resultado")
-cost textoResultado=document.querySelector(".texto-resultado")
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
 
-cost perguntas=[
+const perguntas = [
     {
-        enunciado:"Você costuma fumar",
+        enunciado: "Você costuma fumar",
         alternativas:[
             {
-                texto:"Sim"
-                    afirmação:"afirmação",
-    }
+                texto:"Sim",
+                    afirmação: "afirmação"
+    },
     {
-        texto:"Não"
+        texto:"Não",
             afirmação:"afirmação"
-}
+},
 ]  
     },    
-      {
-       enunciado:"Você se exercita?",
+    {
+        enunciado: "Você gosta de estudar?",
         alternativas:[
-           {
-                texto:"Sim"
-                    afirmação:"afirmação",
-    }
+            {
+                texto:"Sim",
+                    afirmação: "afirmação"
+    },
     {
-        texto:"Não"
+        texto:"Não",
             afirmação:"afirmação"
- {
-     enunciado:"Você gosta de estudar?",
-    alternativas:[
- {
-                texto:"Sim"
-                    afirmação:"afirmação",
-    }
+},
+]  
+    },  
     {
-        texto:"Não"
-            afirmação:"afirmação"
-}    
-  {
-     enunciado:"Você é mais de exatas ou humanas?",
-    alternativas:[
- {
-                texto:"Exatas"
-                    afirmação:"afirmação",
-    }
+        enunciado: "Você costuma ter uma boa noite de sono?",
+        alternativas:[
+            {
+                texto:"Sim",
+                    afirmação: "afirmação"
+    },
     {
-        texto:"Humanas"
+        texto:"Não",
             afirmação:"afirmação"
-}
-  {
-     enunciado:"O que você prefere?",
-    alternativas:[
-      {
-                texto:"Doce"
-                    afirmação:"afirmação",
+},
+]  
+    },  
     {
-        texto:"Salgado"
+        enunciado: "Você gosta de socializar?",
+        alternativas:[
+            {
+                texto:"Sim",
+                    afirmação: "afirmação"
+    },
+    {
+        texto:"Não",
             afirmação:"afirmação"
-}
-  },  
+},
+]  
+    },  
+    {
+        enunciado: "Você costuma sair?",
+        alternativas:[
+            {
+                texto:"Sim",
+                    afirmação: "afirmação"
+    },
+    {
+        texto:"Não",
+            afirmação:"afirmação"
+},
+]  
+    },  
+],
+
+
+
+
+
+
 
 let atual = 0;
 let perguntaAtual;
+let historiaFinal = " ";
 
 function mostraPergunta() {
-    if(atual >= perguntas.lenght){
+    if(atual >= perguntas.lenght) {
     mostraResultados();
         return;
          }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textoContent=""
+    caixaAlternativas.textoContent = "";
     mostraAlternativas();
 }
 
@@ -102,17 +119,16 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+      botaoAlternativas.addEventListener("click,()=> respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
-    }
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
+    const afirmacoes = opcaoSelecionada.afirmação;
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
@@ -125,8 +141,3 @@ function mostraResultado() {
 }
 
 mostraPergunta();
-function mostraResultado(){
-    caixaPerguntas.textC = "";
-}
-}
-mostraPergunta()
