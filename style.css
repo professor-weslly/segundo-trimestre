@@ -29,10 +29,10 @@ h1 {
 button{
     background-color:van(--cor-secundaria);
     color:var (--cor-texto)
-    border:none;
-    border-radius:15px;
-    padding:15px;
-    transition: backgroun-color 0.3s;
+    border none;
+    border-radius:15px ;
+    padding:15px ;
+    transition:backgroun-color 0.3s ;
 }
 
 button:hover{
