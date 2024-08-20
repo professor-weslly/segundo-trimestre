@@ -73,13 +73,6 @@ const perguntas = [
 ];
 
 
-
-
-
-
-
-
-
 let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
@@ -103,6 +96,7 @@ function mostraAlternativas(){
 
      caixaAlternativas.appendChild(botaoAlternativas);
 }
+}
 
 function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmação;
@@ -118,4 +112,4 @@ function mostraResultado() {
 }
 
 mostraPergunta();
-}
+
